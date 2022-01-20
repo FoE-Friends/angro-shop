@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./modules/mmenu";
+@import "./modules/simplebar";
+@import "./modules/carousel";
+@import "./modules/price-slider";
+
+@import "./theme/base";
+@import "./theme/fonts";
+@import "./theme/header";
+@import "./theme/navbar";
+@import "./theme/footer";
+@import "./theme/forms";
+
+@import "./pages/homepage";
+@import "./pages/textpage";
+@import "./pages/category";
+@import "./pages/product";
+@import "./pages/checkout";

@@ -1,0 +1,163 @@
+nav.navbar
+  .container.flex
+    ul.navbar__nav
+      li
+        a(href="#").navbar-link
+          +icon("cat-kids")
+          span Одежда для детей
+          +icon("arrow-down")
+        .navbar__dropdown: .container
+          .row
+            .col.md-3.lg-4: img.cat-image(src="//picsum.photos/id/50/440/300", alt="category image")
+            .col.md-9.lg-8
+              h3 Одежда для детей
+              ul.parent
+                li
+                  a(href="#") Одежда для новорожденных
+                  ul.child
+                    li: a(href="#") Костюмы
+                    li: a(href="#") Боди
+                    li: a(href="#") Столовые сервизы
+                    li: a(href="#") Комбинезоны
+                    li: a(href="#") Пледы
+                li
+                  a(href="#") Одежда для девочек
+                  ul.child
+                    li: a(href="#") Костюмы
+                    li: a(href="#") Джинсы
+                    li: a(href="#") Свитера и кардиганы
+                    li: a(href="#") Платья и юбки
+                    li: a(href="#") Куртки
+                    li: a(href="#") Жилетки
+                li
+                  a(href="#") Одежда для мальчиков
+                  ul.child
+                    li: a(href="#") Костюмы
+                    li: a(href="#") Брюки и шорты
+                    li: a(href="#") Свитера и кардиганы
+                    li: a(href="#") Куртки
+                    li: a(href="#") Жилетки
+                    li: a(href="#") Футболки и рубашки
+      li
+        a(href="#").navbar-link.active
+          +icon("cat-kitchen")
+          span Все для кухни
+          +icon("arrow-down")
+        .navbar__dropdown: .container
+          .row
+            .col.md-3.lg-4: img.cat-image(src="//picsum.photos/id/51/440/300", alt="category image")
+            .col.md-9.lg-8
+              h3 Все для кухни
+              ul.parent
+                li
+                  a(href="#") Посуда для сервировки
+                  ul.child
+                    li: a(href="#") Наборы для специй
+                    li: a(href="#") Вазы для фруктов
+                    li: a(href="#") Столовые сервизы
+                    li: a(href="#") Чайные сервизы
+                    li: a(href="#") Подносы
+                    li: a(href="#") Графины
+                    li: a(href="#") Посуда для мороженого
+                    li: a(href="#") Салфетницы
+                li
+                  a(href="#") Столовая посуда
+                  ul.child
+                    li: a(href="#") Столовые приборы
+                    li: a(href="#") Наборы стаканов
+                    li: a(href="#") Тарелки
+                    li: a(href="#") Кружки
+                    li: a(href="#") Пиалы
+                li
+                  a(href="#") Хранение
+                  ul.child
+                    li: a(href="#") Контейнеры
+                    li: a(href="#") Корзины
+                    li: a(href="#") Сахарницы
+                    li: a(href="#") Термосы
+                    li: a(href="#") Подставки для столовых приборов
+                li
+                  a(href="#") Принадлежности для выпечки
+                  ul.child
+                    li: a(href="#") Посуда для запекания
+                    li: a(href="#") Формы для выпечки
+                li
+                  a(href="#") Кухонная утварь
+                  ul.child
+                    li: a(href="#") Разделочные доски
+                    li: a(href="#") Терки
+                    li: a(href="#") Аксессуары
+                li: a(href="#") Гриль
+      li
+        a(href="#").navbar-link
+          +icon("cat-home")
+          span Все для дома
+          +icon("arrow-down")
+        .navbar__dropdown: .container
+          .row
+            .col.md-3.lg-4: img.cat-image(src="//picsum.photos/id/52/440/300", alt="category image")
+            .col.md-9.lg-8
+              h3 Все для дома
+              ul.parent
+                li
+                  a(href="#") Спальня
+                  ul.child
+                    li: a(href="#") Постельное белье
+                    li: a(href="#") Детское постельное белье
+                    li: a(href="#") Простыни
+                    li: a(href="#") Одеяла
+                    li: a(href="#") Покрывала
+                    li: a(href="#") Подушки
+                    li: a(href="#") Пледы
+                li
+                  a(href="#") Ванная комната
+                  ul.child
+                    li: a(href="#") Полотенца
+                    li: a(href="#") Халаты
+                    li: a(href="#") Коврики
+                li
+                  a(href="#") Декор
+                  ul.child
+                    li: a(href="#") Сувениры
+                    li: a(href="#") Фото рамки
+                    li: a(href="#") Вазы для цветов
+                    li: a(href="#") Подсвечники
+                    li: a(href="#") Скатерть
+                    li: a(href="#") Люстры
+                li
+                  a(href="#") Освещение
+                  ul.child
+                    li: a(href="#") Люстры
+                li
+                  a(href="#") Другое
+                  ul.child
+                    li: a(href="#") Хранение
+                    li: a(href="#") Уборка
+                    li: a(href="#") Ведра для мусора
+                    li: a(href="#") Чехлы-накидки на мягкую мебель
+      li
+        a(href="#").navbar-link
+          +icon("cat-toys")
+          span Игрушки для детей
+          +icon("arrow-down")
+        .navbar__dropdown: .container
+          .row
+            .col.md-3.lg-4: img.cat-image(src="//picsum.photos/id/53/440/300", alt="category image")
+            .col.md-9.lg-8
+              h3 Игрушки для детей
+              ul.parent
+                li: a(href="#") Пазлы
+                li: a(href="#") Настольные игры
+                li: a(href="#") Конструкторы
+                li: a(href="#") Для мальчиков
+                li: a(href="#") Для девочек
+                li: a(href="#") Мягкие игрушки
+    ul.navbar__nav.right-nav
+      li
+        a(href="#").navbar-link
+          +icon("sale")
+          span Скидки
+      li
+        a(href="#").navbar-link
+          +icon("phone")
+          span Контакты

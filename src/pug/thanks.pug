@@ -1,0 +1,54 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Ваша заявка получена.'
+block content
+  section.section.thanks-page: .container
+    .thanks-wraper
+      img(src="../assets/images/thanks.svg", alt="")
+      h3 Спасибо!
+      p Ваша заявка получена.
+      p Мы свяжемся с вами в ближайшее время!
+      .panel: .row
+        .col.sm-6
+          ul
+            li
+              strong.start Nume/prenume:
+              span.end Vasile Ciobanu
+            li
+              strong.start Telefon:
+              span.end +373 79 818 686
+            li
+              strong.start Email:
+              .end angro@gmail.com
+            li
+              strong.start Adresa de livrare:
+              span.end str. Uzinelor 100/1, mun. Chişinău
+            li
+              strong.start Metoda de plată:
+              span.end Plată online
+        .col.sm-6
+          ul
+            li
+              span.start Numărul comenzii:
+              strong.end 125894625
+            li
+              span.start Data creării:
+              strong.end 12.12.21
+            li
+              span.start Suma comenzii:
+              strong.end 1499 lei
+            li
+              span.start Cod promo <small>(WINTER-2021)</small>:
+              strong.end -50 lei
+            li
+              span.start Livrare:
+              strong.end 100 lei
+            li
+              strong.start Total:
+              strong.end 1549 lei
+
+
+
+
+  +items-carousel('sale-items', 'Вам может понравиться')

@@ -1,0 +1,140 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Корзина'
+block content
+  include ./components/_breadcrumbs
+  section.section.checkout: .container
+    .section__header: h2=title
+    .checkout-items
+      .checkout-items__header
+        .col.product Товар
+        .col.price Цена
+        .col.quantity Количество
+        .col.summary Стоимость
+        .col.controls
+      -for(i=1;i<=3;i++)
+        .checkout-items__item
+          .col.product
+            a(href="").product-link
+              img(src="//picsum.photos/id/"+i+35+"/96", alt="")
+              span.text
+                span.title Фарфоровая кастрюля
+                span.desc Мы предлагаем организацию высокоэффективной работы,
+          .col.price 520 лей
+          .col.quantity: .form--input.counter
+            input(type="number" value="1" min="1" step="1")
+            .btn.btn-minus: +icon("minus")
+            .btn.btn-plus: +icon("plus")
+          .col.summary: strong 1040 лей
+          .col.controls: a(href="").delete: +icon('close')
+    .checkout-summary
+      .item
+        .col.start Сумма заказа:
+        .col.end 1210 лей
+      .item.discount
+        .col.start: .form
+          .form--input
+            input(type="text" placeholder="Добавить промокод")
+          button.btn.btn--outline: +icon('basket')
+      .item.discount
+        .col.start
+          .label Промокод применен
+          .code WINTER-2021
+        .col.end -50 лей
+      .item
+        .col.start Доставка:
+        .col.end 100 лей
+      .item.total
+        .col.start Итого:
+        .col.end 1210 лей
+    .checkout-steps: .row
+      .col.md-3: .step
+        .step__header
+          .num 1
+          .txt
+            .title Completează
+            .desc Datele personale
+        .step__panel
+          .panel__header Date personale
+          .panel__body
+            .form--input
+              input(type="text" placeholder="Nume/Prenume*")
+            .form--input
+              input(type="tel" placeholder="Telefon*")
+            .form--input
+              input(type="mail" placeholder="Email*")
+
+      .col.md-6: .step
+        .step__header
+          .num 2
+          .txt
+            .title Completează
+            .desc Datele de livrare
+        .step__panel
+          .panel__header Date livrare
+          .panel__body
+            .row
+              .col.sm-6
+                .form--radio
+                  input#curier(type="radio", name="checkout-delivery" value="1" checked="")
+                  label(for="curier").btn.btn--outline.w-full.mb-8
+                    +icon('delivery')
+                    span.btn__text Livrare prin curier
+              .col.sm-6
+                .form--radio
+                  input#magazin(type="radio", name="checkout-delivery" value="0")
+                  label(for="magazin").btn.btn--outline.w-full.mb-8
+                    +icon('pickingup')
+                    span.btn__text Ridicare în magazin
+            #delivery-block
+              .form--input
+                select
+                  option(disabled selected) -- Alege localitatea --
+                  option(value='Chishinau') Chishinau
+                  -for(i=1;i<=5;i++)
+                    option(value=i) Option text ##{i}
+                .caret: +icon("arrow-down")
+              .form--input
+                input(type="text" placeholder="Adresa deplină de livrare*")
+            #pickup-block
+              .form--input
+                select
+                  option(disabled selected) -- Alege magazinul --
+                  -for(i=1;i<=5;i++)
+                    option(value=i) Option text ##{i}
+                .caret: +icon("arrow-down")
+      .col.md-3: .step
+        .step__header
+          .num 3
+          .txt
+            .title Alege
+            .desc Metoda de plată
+        .step__panel
+          .panel__header Metode de plată
+          .panel__body
+            .form--radio
+              input#cashing(type="radio", name="checkout-payment" value="0" checked="")
+              label(for="cashing").btn.btn--outline.w-full.mb-8
+                +icon('cash')
+                span.btn__text Plata la livrare
+            .form--radio
+              input#banking(type="radio", name="checkout-payment" value="1")
+              label(for="banking").btn.btn--outline.w-full.mb-8
+                +icon('bank')
+                span.btn__text Plata online
+            .form--radio
+              input#terminal(type="radio", name="checkout-payment" value="1")
+              label(for="terminal").btn.btn--outline.w-full
+                +icon('pos')
+                span.btn__text Plata online
+      .col
+        .form--input
+          textarea#comment(placeholder="Alte comentarii", cols="30", rows="10")
+      .col.text-center.mb-8
+        .form--check
+          label
+            input(type="checkbox")
+            .input
+            .text Я согласен с <a href=''>Условиями платежа и доставки</a>
+        button.btn.btn--primary.px-10: .btn__text Оформить заказ

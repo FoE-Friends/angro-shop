@@ -1,0 +1,348 @@
+body {
+  @apply font-sans;
+  background: url(../assets/images/main-bg.png) repeat-y;
+  background-size: contain;
+}
+
+.icon {
+  @apply inline-block align-middle fill-current leading-none;
+  width: 1em;
+  height: 1em;
+}
+
+.row {
+  @apply flex flex-wrap -mx-col;
+}
+
+.col {
+  @apply px-spacer w-full flex-none;
+
+  &.xs {
+    &-1 {
+      @apply w-1/12;
+    }
+    &-2 {
+      @apply w-2/12;
+    }
+    &-3 {
+      @apply w-3/12;
+    }
+    &-4 {
+      @apply w-4/12;
+    }
+    &-5 {
+      @apply w-5/12;
+    }
+    &-6 {
+      @apply w-6/12;
+    }
+    &-7 {
+      @apply w-7/12;
+    }
+    &-8 {
+      @apply w-8/12;
+    }
+    &-9 {
+      @apply w-9/12;
+    }
+    &-10 {
+      @apply w-10/12;
+    }
+    &-11 {
+      @apply w-11/12;
+    }
+    &-12 {
+      @apply w-full;
+    }
+  }
+
+  &.sm {
+    @screen sm {
+      &-1 {
+        @apply w-1/12;
+      }
+      &-2 {
+        @apply w-2/12;
+      }
+      &-3 {
+        @apply w-3/12;
+      }
+      &-4 {
+        @apply w-4/12;
+      }
+      &-5 {
+        @apply w-5/12;
+      }
+      &-6 {
+        @apply w-6/12;
+      }
+      &-7 {
+        @apply w-7/12;
+      }
+      &-8 {
+        @apply w-8/12;
+      }
+      &-9 {
+        @apply w-9/12;
+      }
+      &-10 {
+        @apply w-10/12;
+      }
+      &-11 {
+        @apply w-11/12;
+      }
+      &-12 {
+        @apply w-full;
+      }
+    }
+  }
+
+  &.md {
+    @screen md {
+      &-1 {
+        @apply w-1/12;
+      }
+      &-2 {
+        @apply w-2/12;
+      }
+      &-3 {
+        @apply w-3/12;
+      }
+      &-4 {
+        @apply w-4/12;
+      }
+      &-5 {
+        @apply w-5/12;
+      }
+      &-6 {
+        @apply w-6/12;
+      }
+      &-7 {
+        @apply w-7/12;
+      }
+      &-8 {
+        @apply w-8/12;
+      }
+      &-9 {
+        @apply w-9/12;
+      }
+      &-10 {
+        @apply w-10/12;
+      }
+      &-11 {
+        @apply w-11/12;
+      }
+      &-12 {
+        @apply w-full;
+      }
+    }
+  }
+
+  &.lg {
+    @screen lg {
+      &-1 {
+        @apply w-1/12;
+      }
+      &-2 {
+        @apply w-2/12;
+      }
+      &-3 {
+        @apply w-3/12;
+      }
+      &-4 {
+        @apply w-4/12;
+      }
+      &-5 {
+        @apply w-5/12;
+      }
+      &-6 {
+        @apply w-6/12;
+      }
+      &-7 {
+        @apply w-7/12;
+      }
+      &-8 {
+        @apply w-8/12;
+      }
+      &-9 {
+        @apply w-9/12;
+      }
+      &-10 {
+        @apply w-10/12;
+      }
+      &-11 {
+        @apply w-11/12;
+      }
+      &-12 {
+        @apply w-full;
+      }
+    }
+  }
+}
+
+.section {
+  @apply pt-5 sm:pt-8 md:pt-24 overflow-hidden pb-5 sm:pb-8 md:pb-24;
+
+  &__header {
+    @apply flex items-center mb-col md:mb-5;
+
+    h2 {
+      @apply flex-1 pr-5 truncate;
+    }
+
+    .controls {
+      @apply hidden sm:flex items-center;
+
+      button {
+        @apply w-8 h-8 rounded-full border border-grayDark border-opacity-20 hover:border-primary bg-white hover:bg-primary text-primary hover:text-white mr-2 last:mr-0;
+
+        .icon {
+          @apply block w-5 h-5 mx-auto;
+        }
+      }
+    }
+  }
+
+  &.sale-items,
+  &.home-brands {
+    @apply bg-blue bg-opacity-20;
+  }
+
+  &.home-brands {
+    .col {
+      @apply py-spacer;
+
+      img {
+        @apply block w-full rounded-lg border border-grayLight p-3 object-cover object-center bg-white;
+      }
+    }
+
+    .row:last-child {
+      @apply hidden sm:flex;
+    }
+  }
+
+  &.page-header {
+    @apply m-0 p-0 relative text-center;
+
+    .page-header__image {
+      @apply absolute inset-0 object-cover object-center z-0 block w-full h-full;
+    }
+
+    .page-header__overlay {
+      @apply px-0 py-20 sm:py-40 relative z-10 bg-black bg-opacity-50 text-white;
+    }
+  }
+
+  &.thanks-page {
+    .thanks-wraper {
+      @apply rounded-lg shadow-xl p-5 sm:p-10 text-center;
+
+      background: white url(../assets/images/thanks-bg.png);
+      background-size: contain;
+
+      img {
+        @apply block mx-auto mt-spacer mb-5;
+      }
+
+      h3,
+      p {
+        @apply mb-2;
+      }
+
+      .panel {
+        @apply p-5 rounded-lg bg-white bg-opacity-50 backdrop-filter backdrop-blur-sm shadow-md;
+        .row {
+          @apply -mx-5;
+        }
+        .col {
+          @apply py-spacer px-5;
+        }
+        ul {
+          @apply text-left;
+
+          li {
+            @apply block sm:flex border-b border-grayLight py-spacer text-sm;
+
+            span,
+            strong {
+              @apply block;
+            }
+
+            strong {
+              @apply font-semi;
+            }
+
+            .start {
+              @apply flex-1 pr-col;
+            }
+
+            .ent {
+              @apply pl-col;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#page {
+  @apply min-h-screen flex flex-col md:pt-24 pt-16;
+
+  .main {
+    @apply flex-1;
+  }
+}
+
+.breadcrumbs {
+  @apply py-5 mb-5 border-b border-pink text-xs leading-5 text-gray;
+
+  .icon {
+    @apply w-4 h-4 mr-1;
+  }
+
+  a {
+    @apply text-primary hover:text-black;
+  }
+
+  li,
+  span,
+  .icon {
+    @apply inline-block leading-none align-middle;
+  }
+
+  li:after {
+    @apply inline-block leading-none align-middle w-spacer h-px bg-current mx-2;
+    content: "";
+  }
+
+  li:last-child:after {
+    @apply hidden;
+  }
+}
+
+.pagination {
+  @apply py-5;
+
+  ul {
+    @apply flex flex-wrap items-center justify-center select-none;
+
+    li {
+      @apply p-col block flex-none;
+
+      a,
+      span {
+        @apply block w-9 h-9 rounded-full text-black font-semi leading-9 text-base text-center;
+      }
+
+      a {
+        @apply bg-white border border-grayLight hover:bg-primary hover:border-primary hover:text-white;
+      }
+
+      &.current a {
+        @apply border-primary;
+      }
+    }
+  }
+}

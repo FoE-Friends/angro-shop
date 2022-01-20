@@ -1,0 +1,22 @@
+mixin items-carousel(cl, tl)
+  section.section(class=cl).shop-items
+    .container
+      .section__header
+        h2=tl
+        .controls
+          button.owl-prev: +icon("arrow-left")
+          button.owl-next: +icon("arrow-right")
+      .products_carousel.owl-carousel
+        -for(i=1;i<=10;i++)
+          - var active = i==3? 'active' : ''
+          .product-cart
+            .product-cart__header
+              span.sale -25%
+              a.fav(href="" class=active): +icon("favorites")
+              a(href="").image: img(src="//picsum.photos/id/"+i+35+"/320", alt="slide image")
+            .product-cart__title: a(href="") Set huse canapele si fotolii 3.1.1.
+            .product-cart__footer
+              .product-cart__price
+                .old-price 750 Лей
+                .price 550 Лей
+              .product-cart__button: a(href=""): +icon("basket")

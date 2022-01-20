@@ -1,0 +1,22 @@
+.home-categories {
+  overflow: hidden;
+}
+.home-about {
+  @apply text-sm;
+
+  .image {
+    @apply mb-5 rounded-2xl;
+  }
+
+  .text-wraper {
+    @apply mb-5 lg:pl-8;
+  }
+
+  h4 {
+    @apply mb-spacer;
+  }
+
+  p {
+    @apply mb-5 md:mb-8;
+  }
+}

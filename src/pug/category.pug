@@ -1,0 +1,119 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Одежда для новорожденных'
+block content
+  include ./components/_page-art
+  include ./components/_breadcrumbs
+
+  section.section.category-page: .container
+    .category-page__controls
+      .control-left
+        h3
+          span Фильтры
+          small 12
+        button.show-filters
+          span Фильтры
+          +icon("arrow-right")
+
+      .control-right
+        .dropmenu
+          button.dropmenu__toggle
+            span Сортировка
+            +icon("arrow-down")
+          nav.dropmenu__nav
+            ul
+              li: a(href="").active По популярности
+              li: a(href="") Цена по возрастанию
+              li: a(href="") Цена по убыванию
+    .row
+      .col.md-4.lg-3
+        .clear-filters
+          button.btn.btn--pink.w-full: .btn__text Очистить фильтры
+        .filters
+          .filters__wraper
+            .filters__header Filters
+            .filters__body(data-simplebar="")
+              .filters__list
+                .filter
+                  .filter__header
+                    .title Checkboxes filter
+                    +icon("arrow-down")
+                  .filter__body(data-simplebar="")
+                    .form
+                      -for(i=1;i<=10;i++)
+                        .form--check
+                          label
+                            input(type="checkbox")
+                            .input
+                            .text Category name
+
+                .filter.open
+                  .filter__header
+                    .title Price slider
+                    +icon("arrow-down")
+                  .filter__body(data-simplebar="")
+                    .form
+                      .form--price
+                        .row
+                          .col.xs-6.form--price__min
+                            input(type="text")
+                            label От
+                          .col.xs-6.form--price__max
+                            input(type="text")
+                            label До
+                        .form--price__steps
+
+
+                .filter
+                  .filter__header
+                    .title Checkboxes filter
+                    +icon("arrow-down")
+                  .filter__body(data-simplebar="")
+                    .form
+                      -for(i=1;i<=10;i++)
+                        .form--check
+                          label
+                            input(type="checkbox")
+                            .input
+                            .text Category name
+
+                .filter
+                  .filter__header
+                    .title Checkboxes filter
+                    +icon("arrow-down")
+                  .filter__body(data-simplebar="")
+                    .form
+                      -for(i=1;i<=10;i++)
+                        .form--check
+                          label
+                            input(type="checkbox")
+                            .input
+                            .text Category name
+
+      .col.md-8.lg-9
+        .current-filters
+          nav.current-filters__list(data-simplebar="")
+            ul
+              -for(i=1;i<=12;i++)
+                li: .filter-item
+                  .title Name:
+                  .value Value
+                  a.delete(href=""): +icon("close")
+        .category-page__list
+          .row
+            -for(i=1;i<=12;i++)
+              - var active = i % 2 == 0 ? 'active' : ''
+              .col.xs-6.sm-4.md-6.lg-4.mb-5
+                .product-cart
+                  .product-cart__header
+                    span.sale -25%
+                    a.fav(href="" class=active): +icon("favorites")
+                    a(href="").image: img(src="//picsum.photos/id/"+i+2+"/320", alt="slide image")
+                  .product-cart__title: a(href="") Set huse canapele si fotolii 3.1.1.
+                  .product-cart__footer
+                    .product-cart__price
+                      .old-price 750 Лей
+                      .price 550 Лей
+                    .product-cart__button: a(href=""): +icon("basket")
+        include ./components/_pagination

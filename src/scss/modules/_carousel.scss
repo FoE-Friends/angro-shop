@@ -1,0 +1,135 @@
+@import "~owl.carousel/src/scss/core";
+@import "~owl.carousel/src/scss/animate";
+
+.owl-carousel .owl-dots {
+  @apply absolute text-center top-full inset-x-0 py-2;
+
+  .owl-dot {
+    @apply w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray mr-2 last:mr-0;
+
+    &:hover,
+    &.active {
+      @apply bg-primary;
+    }
+  }
+}
+
+.intro_carousel {
+  .intro-item {
+    @apply rounded-lg overflow-hidden relative select-none;
+
+    .image {
+      @apply block object-center object-cover h-intro_sm md:h-intro_lg;
+    }
+
+    .overlay {
+      @apply absolute inset-0 block bg-black bg-opacity-40 hover:bg-opacity-75 transition-all duration-500 text-2xl md:text-4xl text-white leading-none font-bold p-12 md:p-24;
+    }
+  }
+
+  .owl-nav {
+    button.owl-prev,
+    button.owl-next {
+      @apply block absolute bottom-11 rounded-full border border-white bg-white border-opacity-90 bg-opacity-25 hover:bg-opacity-50 text-white hover:text-primary;
+
+      .icon {
+        @apply w-9 h-9 p-2 block;
+      }
+    }
+
+    button.owl-prev {
+      @apply left-11;
+    }
+    button.owl-next {
+      @apply right-11;
+    }
+  }
+}
+
+.categories_carousel {
+  .owl-stage-outer {
+    @apply overflow-visible;
+  }
+
+  .owl-item {
+    @apply filter blur-sm opacity-80 py-spacer;
+
+    &.active {
+      @apply blur-none opacity-100;
+
+      .category:hover {
+        .image {
+          @apply opacity-50 transform scale-110;
+        }
+        .overlay {
+          @apply bg-opacity-25 text-white;
+        }
+      }
+    }
+  }
+
+  .category {
+    @apply relative rounded-xl overflow-hidden h-0 bg-black;
+    padding-top: 380/310 * 100%;
+
+    &::before {
+      @apply block absolute inset-0 z-10;
+      content: "";
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+
+    .image {
+      @apply block object-cover object-center absolute z-0 inset-0 w-full h-full transition-all duration-500 ease-in-out origin-center;
+    }
+
+    .overlay {
+      @apply flex flex-col justify-between absolute inset-0 object-cover object-center p-5 bg-black bg-opacity-0 text-white z-20;
+    }
+
+    &__title {
+      @apply text-base font-semi md:text-lg;
+    }
+
+    &__counter {
+      @apply flex items-center bg-white bg-opacity-30 rounded-full px-spacer py-2 text-white font-semi backdrop-filter backdrop-blur-sm;
+
+      span {
+        @apply flex-1 pr-spacer;
+      }
+
+      .icon {
+        @apply w-5 h-5 flex-none block;
+      }
+    }
+  }
+
+  .owl-nav {
+    button.owl-prev,
+    button.owl-next {
+      @apply block absolute top-1/2 rounded-full border border-white bg-white border-opacity-90 bg-opacity-25 hover:bg-opacity-50 text-white hover:text-primary transform -translate-y-1/2;
+
+      .icon {
+        @apply w-9 h-9 p-2 block;
+      }
+    }
+
+    button.owl-prev {
+      @apply left-5;
+    }
+    button.owl-next {
+      @apply right-5;
+    }
+  }
+}
+
+.products_carousel {
+  @apply w-auto -mx-spacer;
+
+  .owl-item {
+    @apply p-spacer;
+  }
+}

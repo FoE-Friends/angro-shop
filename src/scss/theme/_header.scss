@@ -1,0 +1,226 @@
+.header {
+  @apply fixed inset-x-0 top-0 z-50 bg-black text-white py-2 md:py-4;
+
+  &__logo {
+    @apply block flex-none pl-2 sm:pr-5 w-28 sm:w-auto;
+
+    img {
+      @apply block h-12 w-auto;
+    }
+  }
+
+  &__search,
+  &__lang {
+    @apply hidden md:block;
+  }
+
+  &__menu {
+    @apply block p-spacer -ml-spacer;
+
+    @screen md {
+      @apply hidden;
+    }
+
+    .icon {
+      @apply w-6 h-6 text-center text-white;
+    }
+  }
+
+  &__nav {
+    @apply flex-1 md:flex-none;
+
+    ul {
+      @apply flex justify-end;
+
+      li {
+        @apply flex-none;
+      }
+    }
+
+    .nav-link {
+      @apply flex relative p-spacer md:px-spacer lg:px-5 text-white text-sm hover:text-primary transition-colors ease-in-out duration-150 select-none;
+
+      &.active {
+        @apply text-primary;
+      }
+
+      &.faq,
+      &.user,
+      &__text {
+        @apply hidden;
+      }
+
+      .icon {
+        @apply block relative z-0 w-5 h-5 text-center text-white;
+      }
+
+      &.basket {
+        .basket__counter {
+          @apply relative;
+
+          .counter {
+            @apply block absolute -top-1 -right-1 bg-primary text-white text-xxs w-3 h-3 rounded-full text-center;
+          }
+        }
+      }
+
+      &__text {
+        @apply pl-2 text-xs lg:text-sm;
+      }
+
+      @screen md {
+        &.faq,
+        &.user,
+        &__text {
+          @apply flex;
+        }
+
+        &.search {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  &__search {
+    @apply flex-1;
+
+    .search-form {
+      @apply relative p-spacer px-3 border-b border-primary md:border-b-0 m-0 sm:bg-white md:bg-transparent;
+
+      input {
+        @apply relative text-xs lg:text-sm leading-7 md:leading-5 z-0 rounded-full border-0 shadow-none bg-white text-black outline-none w-full py-2 px-8;
+      }
+
+      label,
+      button {
+        @apply block absolute text-black z-10 top-1/2 transform -translate-y-half;
+      }
+
+      label {
+        @apply left-5 cursor-text;
+      }
+
+      button {
+        @apply right-5 md:hidden;
+
+        &.show {
+          @apply block;
+        }
+      }
+
+      .icon {
+        @apply w-5 h-5 text-center block leading-none;
+      }
+    }
+
+    .search-results {
+      @apply static hidden bg-white;
+
+      height: calc(100vh - 45px);
+
+      &.show {
+        @apply block;
+      }
+
+      .simplebar-track.simplebar-vertical {
+        @apply -right-spacer sm:right-0;
+      }
+
+      .col:last-child {
+        @apply hidden sm:block;
+      }
+
+      @screen sm {
+        @apply bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm cursor-pointer;
+      }
+
+      @screen md {
+        @apply absolute top-full inset-x-0 h-screen;
+      }
+
+      &__wraper {
+        @apply bg-white text-black pb-5 cursor-default;
+      }
+
+      .results-title {
+        @apply hidden sm:block text-base text-black pb-2 border-b border-primary font-bold pt-5;
+      }
+
+      .results-list {
+        height: calc(100vh - 45px);
+
+        @screen sm {
+          height: 260px;
+        }
+
+        li {
+          @apply md:pr-2;
+        }
+
+        .product {
+          @apply flex items-center py-2 border-b border-primary text-sm text-black hover:text-primary;
+
+          &__img {
+            @apply block flex-none rounded overflow-hidden;
+
+            img {
+              @apply block w-12 h-12 object-cover object-center;
+            }
+          }
+
+          &__title {
+            @apply px-5 flex-1;
+          }
+
+          &__price {
+            @apply block flex-none whitespace-nowrap font-bold pr-spacer text-black;
+          }
+
+          &:hover .product__title {
+            @apply underline;
+          }
+        }
+
+        .category {
+          @apply flex items-center py-3 border-b border-primary text-sm text-black hover:text-primary;
+          &__title {
+            @apply flex-1;
+          }
+          &__items {
+            @apply block flex-none whitespace-nowrap font-bold pr-spacer text-black;
+          }
+          &:hover .category__title {
+            @apply underline;
+          }
+        }
+      }
+    }
+
+    &.open {
+      @apply block fixed inset-0 bg-white z-50 sm:bg-transparent;
+
+      @screen md {
+        @apply static bg-transparent;
+      }
+    }
+  }
+
+  &__lang {
+    ul {
+      @apply flex items-center text-primary text-xs lg:text-sm;
+
+      li {
+        @apply border-l border-current first:border-l-0;
+
+        a {
+          @apply block px-2 text-white hover:text-primary;
+
+          &.active {
+            @apply text-primary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Избранное'
+block content
+  include ./components/_breadcrumbs
+  section.section.favorites-page: .container
+    .section__header: h2=title
+    .row
+      -for(i=1;i<=12;i++)
+        - var active = i % 2 == 0 ? 'active' : ''
+        .col.xs-6.sm-4.lg-3.mb-5
+          .product-cart
+            .product-cart__header
+              span.sale -25%
+              a.fav(href="" class=active): +icon("favorites")
+              a(href="").image: img(src="//picsum.photos/id/"+i+2+"/320", alt="slide image")
+            .product-cart__title: a(href="") Set huse canapele si fotolii 3.1.1.
+            .product-cart__footer
+              .product-cart__price
+                .old-price 750 Лей
+                .price 550 Лей
+              .product-cart__button: a(href=""): +icon("basket")
+    include ./components/_pagination
+  +items-carousel('sale-items', 'Вам может понравиться')

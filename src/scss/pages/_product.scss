@@ -1,0 +1,346 @@
+.product {
+  @apply py-5;
+
+  &__main {
+    @apply mb-5;
+
+    &__gallery {
+      @apply sm:pl-16 mb-5;
+
+      .product_gallery {
+        .item {
+          @apply overflow-hidden rounded-lg relative;
+
+          img {
+            @apply block object-cover object-center;
+            height: 430px;
+          }
+        }
+        .owl-thumbs {
+          @apply hidden sm:block absolute -left-16 top-0 w-14;
+
+          .owl-thumb-item {
+            @apply opacity-50 overflow-hidden rounded block mb-2 cursor-pointer;
+
+            &:hover,
+            &.active {
+              @apply opacity-100;
+            }
+          }
+        }
+        .owl-nav {
+          button.owl-prev,
+          button.owl-next {
+            @apply block absolute bottom-11 rounded-full border border-white bg-white border-opacity-90 bg-opacity-25 hover:bg-opacity-50 text-white hover:text-primary;
+
+            .icon {
+              @apply w-9 h-9 p-2 block;
+            }
+          }
+
+          button.owl-prev {
+            @apply left-11;
+          }
+          button.owl-next {
+            @apply right-11;
+          }
+        }
+      }
+    }
+
+    &__intro {
+      @apply pl-0 md:pl-10;
+
+      .product__header {
+        @apply flex items-start;
+
+        h2 {
+          @apply flex-1 pr-5 pt-1;
+        }
+      }
+
+      .product__meta {
+        @apply py-3 flex flex-wrap items-center;
+
+        .meta {
+          @apply mr-3 text-xs text-grayDark whitespace-nowrap;
+
+          &.instock {
+            @apply rounded-full px-2 py-1 bg-blue text-grayDark;
+
+            &.success {
+              @apply bg-greenLight text-black;
+            }
+
+            &.danger {
+              @apply bg-pink text-white;
+            }
+          }
+        }
+      }
+
+      .product__description {
+        @apply py-5 mb-5 border-t border-b border-grayLight text-sm text-grayDark;
+      }
+
+      .product__params {
+        @apply mb-5 pb-5 border-b border-grayLight;
+        .param {
+          &__label {
+            @apply font-semi mb-col;
+          }
+
+          &.colors ul {
+            @apply flex flex-wrap;
+
+            li {
+              @apply pr-col pb-col;
+
+              .color {
+                input {
+                  @apply hidden;
+
+                  ~ .input {
+                    @apply p-0.5 border border-white rounded-full;
+
+                    span {
+                      @apply block w-8 h-8 rounded-full;
+                    }
+                  }
+
+                  &:checked ~ .input {
+                    @apply border-primary;
+                  }
+                }
+              }
+            }
+          }
+
+          &.size .form--input {
+            @apply mb-0;
+          }
+        }
+      }
+
+      .product__cart {
+        @apply flex items-center flex-wrap pb-5;
+
+        &__price,
+        &__count {
+          @apply flex-1;
+        }
+
+        &__price {
+          @apply text-center pr-spacer;
+
+          .old-price {
+            @apply text-xs text-grayDark line-through md:text-base;
+            line-height: 1;
+          }
+
+          .price {
+            @apply text-base text-black font-bold md:text-2xl;
+            line-height: 1;
+          }
+        }
+        &__count {
+          @apply px-spacer sm:pr-0;
+
+          .form--input {
+            @apply m-0;
+          }
+        }
+
+        .sm-basket {
+          @apply flex-none sm:hidden;
+        }
+
+        &__footer {
+          @apply flex-none w-full flex pt-5;
+
+          .btn {
+            @apply flex-1;
+
+            &:first-child {
+              @apply sm:mr-spacer;
+            }
+
+            &:last-child {
+              @apply hidden sm:flex sm:ml-spacer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    .tabs {
+      @apply overflow-x-auto bg-pinkLight rounded-t-lg;
+
+      ul {
+        @apply flex w-auto;
+
+        li {
+          @apply flex-none pr-px;
+
+          .tab-link {
+            @apply block whitespace-nowrap px-5 py-3 font-semi text-sm md:text-base bg-opacity-70 text-black;
+
+            &.active,
+            &:hover {
+              @apply opacity-100 bg-secondary text-white;
+            }
+          }
+        }
+      }
+    }
+
+    .tab-panel {
+      @apply bg-white shadow-lg rounded-lg;
+
+      &__body {
+        @apply p-5;
+
+        p,
+        h3,
+        h4,
+        h5 {
+          @apply mb-5;
+        }
+
+        h3,
+        h4,
+        h5 {
+          @apply pt-5 first:pt-0;
+        }
+
+        .features {
+          .feature {
+            @apply block sm:flex items-start py-2 text-sm;
+
+            &__label {
+              @apply w-full sm:w-48 sm:mr-5 font-semi;
+            }
+
+            &__value {
+              @apply flex-1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @apply fixed -bottom-16 inset-x-0 bg-blueLight p-spacer  transition-transform duration-500 ease-in-out flex items-center sm:hidden;
+    box-shadow: 0 0 10px rgba(black, 0.15);
+
+    &.inview {
+      @apply bottom-0 z-50;
+    }
+    .product__cart__price,
+    .product__cart__count {
+      @apply flex-1;
+    }
+
+    .product__cart__price {
+      @apply text-center pr-spacer;
+
+      .old-price {
+        @apply text-xs text-grayDark line-through md:text-base;
+        line-height: 1;
+      }
+
+      .price {
+        @apply text-base text-black font-bold md:text-2xl;
+        line-height: 1;
+      }
+    }
+    .product__cart__count {
+      @apply px-spacer sm:pr-0;
+
+      .form--input {
+        @apply m-0;
+      }
+    }
+
+    .sm-basket {
+      @apply flex-none sm:hidden;
+    }
+  }
+}
+
+.modal {
+  @apply hidden fixed inset-0 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm z-0 py-10 px-5 overflow-auto text-center whitespace-nowrap;
+
+  &:before {
+    @apply inline-block align-middle leading-none h-full w-0;
+    content: "";
+  }
+
+  &.open {
+    @apply block z-50;
+  }
+
+  &__header {
+    @apply px-5 pt-5 flex items-center;
+
+    .close {
+      @apply relative py-1 opacity-50 hover:opacity-100 text-black hover:text-primary;
+
+      &:after {
+        @apply block absolute inset-0;
+        content: "";
+      }
+
+      .icon {
+        @apply w-6 h-6 block;
+      }
+    }
+
+    h3 {
+      @apply flex-1 pr-3 truncate;
+    }
+  }
+
+  &__content {
+    @apply inline-block align-middle leading-none text-left bg-white rounded-xl shadow-lg overflow-hidden max-w-lg w-full;
+  }
+
+  &__body {
+    @apply p-5 pb-0 whitespace-normal;
+
+    .product-preview {
+      @apply flex items-center text-black mb-8;
+
+      img {
+        @apply block rounded-md flex-none w-14 sm:w-24 mr-3;
+      }
+
+      span {
+        @apply block;
+      }
+
+      .text {
+        @apply min-w-0;
+      }
+
+      .title {
+        @apply block truncate font-semi text-base sm:text-xl md:mb-2;
+      }
+
+      .desc {
+        @apply text-grayDark text-xs sm:text-sm overflow-hidden max-h-8 sm:leading-4;
+      }
+    }
+
+    .form--input textarea {
+      @apply h-20;
+    }
+  }
+
+  &__footer {
+    @apply px-5 pb-5;
+  }
+}

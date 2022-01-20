@@ -1,0 +1,74 @@
+.footer {
+  @apply bg-black text-white py-10;
+
+  .col {
+    @apply mb-spacer;
+  }
+
+  &__about {
+    @apply text-center md:text-left md:pr-5;
+
+    img {
+      @apply block mb-5 mx-auto md:ml-0;
+    }
+    p {
+      @apply text-sm  mb-spacer text-gray;
+    }
+  }
+
+  h4 {
+    @apply text-grayDark font-semi mb-spacer;
+  }
+
+  &__nav {
+    @apply mb-spacer;
+
+    li {
+      @apply py-1 text-sm cursor-default;
+
+      a {
+        @apply text-white;
+
+        &:hover,
+        &.active {
+          @apply text-primary;
+        }
+      }
+    }
+  }
+
+  &__social {
+    @apply flex mb-spacer;
+
+    li {
+      @apply mr-2 last:mr-0;
+
+      .icon {
+        @apply w-5 h-5;
+      }
+      a {
+        @apply text-white;
+
+        &:hover,
+        &.active {
+          @apply text-gray;
+        }
+      }
+    }
+  }
+
+  &__map {
+    @apply relative w-full rounded-xl overflow-hidden;
+    padding-bottom: 200/460 * 100%;
+
+    #google-map {
+      @apply absolute inset-0 w-full h-full;
+
+      div.gmnoprint,
+    div.gmnoscreen, img[src*="https://maps.gstatic.com/mapfiles/api-3/images/"]
+      {
+        @apply hidden;
+      }
+    }
+  }
+}

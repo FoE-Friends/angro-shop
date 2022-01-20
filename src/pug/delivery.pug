@@ -1,0 +1,28 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Доставка'
+block content
+  include ./components/_page-art
+  include ./components/_breadcrumbs
+  section.section.text-page: .container
+    .section__header: h2=title
+
+    img.text-page__image(src="//picsum.photos/id/5/1300/400", alt="about image")
+
+    .text-page__blocks
+      .row.justify-center
+        .col.sm-6: .text-block
+          .text-block__header
+            +icon("delivery-local")
+            .title По Кишинёву
+          .text-block__body
+            p Заказы, полученные до 17:00 в будние дни, доставляются вечером того же дня или утром следующего рабочего дня. Заказы, полученные после 17:00 в будние дни и по выходным доставляются в течение следующего рабочего дня. Стоимость доставки заказа в пределах городской черты Кишинева - 60 леев
+            p: strong Заказы на сумму свыше 1000 леев доставляются бесплатно
+        .col.sm-6: .text-block
+          .text-block__header
+            +icon("delivery-country")
+            .title По Молдове
+          .text-block__body
+            p Доставка заказов в пригороды Столицы и в районы Молдовы осуществляется различными способами, в зависимости от объёма заказа и адреса доставки. Стоимость и сроки доставки варьируются, подробности можно узнать у наших операторов по телефону
+

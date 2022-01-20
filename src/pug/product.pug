@@ -1,0 +1,122 @@
+extends ./layouts/_layout
+block variables
+  - var title = 'Постельное белье Sasha Yesil'
+block content
+  include ./components/_breadcrumbs
+  section.section.product: .container
+    .product__main
+      .row
+        .col.md-6: .product__main__gallery
+          .product_gallery.owl-carousel
+            -for(i=1;i<=5;i++)
+              .item(data-thumb='Content of your thumbnail (can be anything)')
+                img(src="//picsum.photos/id/"+i+35+"/640", alt="slide image")
+        .col.md-6: .product__main__intro
+          .product__header
+             h2=title
+             a.btn.btn--outline.active(href=""): +icon('favorites')
+          .product__meta
+            .meta.instock.danger В наличии: 6
+            .meta.id Код товара: 548 96654
+          .product__description: p Однотонное турецкое постельное белье станет не только украшением спальни, но и порадует гурманов, которые знают толк в качественном постельном белье.
+          .product__params
+            .row
+              .col.sm-6
+                .param.colors
+                  .param__label Цвет
+                  ul
+                    li: .color
+                      label
+                        input(type="radio", name="color" checked)
+                        .input: span(style="background:#A5A469")
+                    li: .color
+                      label
+                        input(type="radio", name="color")
+                        .input: span(style="background:#A56969")
+                    li: .color
+                      label
+                        input(type="radio", name="color")
+                        .input: span(style="background:#6985A5")
+
+              .col.sm-6
+                .param.size
+                  .param__label Размер
+                  .form--input
+                    select
+                      option(selected) Королевский
+                      -for(i=1;i<=5;i++)
+                        option(value=i) Option text ##{i}
+                    .caret: +icon("arrow-down")
+          .product__cart
+            .product__cart__price
+              .old-price 750 Лей
+              .price 550 Лей
+            .product__cart__count: .form--input.counter
+              input(type="number" value="1" min="1" step="1")
+              .btn.btn-minus: +icon("minus")
+              .btn.btn-plus: +icon("plus")
+            .sm-basket: a(href="").btn.btn--primary: +icon('basket')
+            .product__cart__footer
+              a(href="#oneClick" data-show="modal").btn.btn--outline
+                .btn__text Купить в один клик
+              a(href="").btn.btn--primary
+                .btn__text Купить в один клик
+                +icon('basket')
+    .product__tabs
+      .tabs: ul
+        li: a(href="#tab-1").tab-link Описание
+        li: a(href="#tab-2").tab-link Характеристики
+        li: a(href="#tab-3").tab-link Доставка
+      .tabs-content
+        #tab-1.tab-panel
+          .tab-panel__body
+            h4 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio maiores impedit, mollitia esse ab nostrum? Quasi, repellat. Magni, sequi. Esse dolores, officia ea perspiciatis dolor magnam quisquam aliquid illo voluptas nisi quia perferendis quas, placeat blanditiis beatae dolorem provident asperiores a, iste repudiandae quaerat? Enim dolores maiores incidunt quae!
+            h4 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio maiores impedit, mollitia esse ab nostrum? Quasi, repellat. Magni, sequi. Esse dolores, officia ea perspiciatis dolor magnam quisquam aliquid illo voluptas nisi quia perferendis quas, placeat blanditiis beatae dolorem provident asperiores a, iste repudiandae quaerat? Enim dolores maiores incidunt quae!
+        #tab-2.tab-panel
+          .tab-panel__body
+            ul.features
+              -for(i=1;i<=10;i++)
+                li.feature
+                  .feature__label Label
+                  .feature__value Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero repellat animi quo placeat vitae totam.
+        #tab-3.tab-panel
+          .tab-panel__body
+            h4 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio maiores impedit, mollitia esse ab nostrum? Quasi, repellat. Magni, sequi. Esse dolores, officia ea perspiciatis dolor magnam quisquam aliquid illo voluptas nisi quia perferendis quas, placeat blanditiis beatae dolorem provident asperiores a, iste repudiandae quaerat? Enim dolores maiores incidunt quae!
+            h4 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis optio maiores impedit, mollitia esse ab nostrum? Quasi, repellat. Magni, sequi. Esse dolores, officia ea perspiciatis dolor magnam quisquam aliquid illo voluptas nisi quia perferendis quas, placeat blanditiis beatae dolorem provident asperiores a, iste repudiandae quaerat? Enim dolores maiores incidunt quae!
+    #oneClick.modal
+      .modal__content
+        .modal__header
+          h3 Cumpără într-un click
+          button.close(data-close="modal"): +icon('close')
+        .modal__body
+          .product-preview
+            img(src="//picsum.photos/id/36/96", alt="")
+            span.text
+              span.title Фарфоровая кастрюля
+              span.desc Мы предлагаем организацию высокоэффективной работы
+          .form--input
+            input(type="text" placeholder="Nume/Prenume*")
+          .form--input
+            input(type="tel" placeholder="Telefon*")
+          .form--input
+            input(type="mail" placeholder="Email*")
+          .form--input
+            textarea#comment(placeholder="Commentariu", cols="30", rows="10")
+        .modal__footer
+          button.btn.btn--primary.w-full
+            .btn__text Купить
+            +icon('basket')
+    .product__bottom
+      .product__cart__price
+        .old-price 750 Лей
+        .price 550 Лей
+      .product__cart__count: .form--input.counter
+        input(type="number" value="1" min="1" step="1")
+        .btn.btn-minus: +icon("minus")
+        .btn.btn-plus: +icon("plus")
+      .sm-basket: a(href="").btn.btn--primary: +icon('basket')
+  +items-carousel('sale-items', 'Похожие товары')

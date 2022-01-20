@@ -1,0 +1,29 @@
+a,
+button {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-tight font-bold;
+}
+
+h1 {
+  @apply text-2xl leading-tight font-bold md:text-7xl;
+}
+
+h2 {
+  @apply text-2xl leading-tight font-bold md:text-3xl;
+}
+
+h3 {
+  @apply text-xl leading-tight font-bold md:text-2xl;
+}
+
+h4 {
+  @apply text-base leading-tight font-semi md:text-lg;
+}

@@ -1,0 +1,143 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Юридическое лицо?'
+block content
+  include ./components/_page-art
+  include ./components/_breadcrumbs
+  section.section.text-page: .container
+    .section__header: h2=title
+    .section__text: p Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+    .row
+    .text-page__blocks
+      .row
+        .col.md-7.lg-8: .text-block
+          .text-block__header.start
+            .title Персональные данные
+          .text-block__body
+            .form--input
+              input(type="text" placeholder="Nume companie")
+            .form--input.is-error
+              input(type="email" placeholder="Email")
+              .form--input__text Error input text
+            .form--input
+              input(type="text" placeholder="Persoana responsabila")
+            .form--input
+              input(type="tel" placeholder="Telefon")
+
+            .text-right
+              button.btn(href="").btn--outline.w-48
+                span.btn__text Trimite
+
+
+        .col.md-5.lg-4: .text-block
+          .text-block__header.start
+            .title Sau contactează-ne:
+          .text-block__body
+            .text-page__contacts
+              .contact
+                .contact__header
+                  +icon("mail")
+                  .title Email
+                .contact__body
+                  p: a(href="mailto:angro@gmail.com") angro@gmail.com
+              .contact
+                .contact__header
+                  +icon("phone")
+                  .title Телефон
+                .contact__body
+                  p: a(href="tel:+37379818686") +373 79 818 686
+              .contact
+                .contact__header
+                  +icon("address")
+                  .title Адрес
+                .contact__body
+                  p ул. Uzinelor 100/1<br>MD-2023, г. Кишинев<br>Республика Молдова
+
+
+
+  //section.section: .container
+    .section__header: h2=title
+    .form
+      .row
+        .col.sm-4
+          .form--input.counter
+            input(type="number" value="1" min="1" step="1")
+            .btn.btn-minus: +icon("minus")
+            .btn.btn-plus: +icon("plus")
+      .row
+        .col.sm-4
+          .form--input
+            input(type="text" placeholder="input placeholder")
+        .col.sm-4
+          .form--input.is-error
+            input(type="text" placeholder="input placeholder")
+            .form--input__text Error input text
+        .col.sm-4
+          .form--input
+            input(type="text" placeholder="input placeholder" disabled)
+        .col.sm-4
+          .form--input
+            select
+              option(disabled selected) -- select option --
+              -for(i=1;i<=5;i++)
+                option(value=i) Option text ##{i}
+            .caret: +icon("arrow-down")
+        .col.sm-4
+          .form--input.is-error
+            select
+              option(disabled selected) -- select option --
+              -for(i=1;i<=5;i++)
+                option(value=i) Option text ##{i}
+            .caret: +icon("arrow-down")
+            .form--input__text Error input text
+        .col.sm-4
+          .form--input
+            select(disabled)
+              option(disabled selected) -- select option --
+              -for(i=1;i<=5;i++)
+                option(value=i) Option text ##{i}
+            .caret: +icon("arrow-down")
+
+      .row
+        .col.sm-6
+          a.btn(href="").btn--primary.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+          a.btn(href="").btn--white.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+          a.btn(href="").btn--outline.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+        .col.sm-6
+          button.btn(href="" disabled).btn--primary.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+          button.btn(href="").btn--white.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+          button.btn(href="").btn--outline.mr-5.mb-8
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+        .col.sm-4
+          button.btn(href="").btn--primary.mb-8.w-full
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+        .col.sm-4
+          button.btn(href="").btn--white.mb-8.w-full
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")
+        .col.sm-4
+          button.btn(href="").btn--outline.mb-8.w-full
+            +icon("basket")
+            span.btn__text Button
+            +icon("basket")

@@ -1,0 +1,132 @@
+.text-page {
+  @apply py-5;
+
+  .section__header {
+    @apply mb-5;
+  }
+
+  .section__text {
+    @apply text-lg leading-7 mb-5 sm:mb-10;
+  }
+
+  &__image {
+    @apply block w-full h-48 sm:h-96 object-cover object-center my-10 rounded-lg;
+  }
+
+  &__blocks {
+    @apply pb-10;
+
+    .col {
+      @apply py-spacer;
+    }
+  }
+
+  .text-block {
+    @apply bg-white h-full rounded-lg shadow-lg overflow-hidden;
+
+    &__header {
+      @apply flex justify-center items-center bg-secondary text-white p-spacer font-medium text-base leading-5;
+
+      &.start {
+        @apply justify-start;
+      }
+
+      .icon {
+        @apply w-5 h-5 mr-2;
+      }
+
+      .title {
+        @apply truncate;
+      }
+    }
+
+    &__body {
+      @apply p-5 text-sm text-grayDark;
+    }
+  }
+
+  &__contacts {
+    .contact {
+      @apply mb-5 text-lg leading-7;
+
+      &__header {
+        @apply flex items-center text-black leading-5 font-medium mb-spacer;
+
+        .icon {
+          @apply w-5 h-5 mr-3;
+        }
+      }
+
+      &__body {
+        a {
+          @apply text-grayDark hover:text-black;
+        }
+
+        .schedule {
+          li {
+            @apply flex items-center whitespace-nowrap;
+          }
+
+          &__start {
+            @apply flex-1 sm:flex-none sm:w-20;
+          }
+
+          &__end {
+            @apply flex-none sm:flex-1 pl-1;
+          }
+        }
+
+        .social {
+          @apply flex items-center;
+
+          li {
+            @apply pr-spacer;
+
+            .icon {
+              @apply block w-5 h-5;
+            }
+          }
+        }
+      }
+    }
+
+    @screen sm {
+      columns: 2;
+      column-fill: auto;
+      column-gap: 20px;
+      column-span: all;
+
+      .contact {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
+
+    @screen md {
+      columns: unset;
+    }
+  }
+
+  &__map {
+    @apply relative w-full rounded-xl overflow-hidden mb-5;
+    padding-bottom: 9/16 * 100%;
+
+    @screen md {
+      padding-bottom: 9/12 * 100%;
+    }
+
+    @screen lg {
+      padding-bottom: 580/1200 * 100%;
+    }
+
+    #contact-map {
+      @apply absolute inset-0 w-full h-full;
+
+      div.gmnoprint,
+      div.gmnoscreen, img[src*="https://maps.gstatic.com/mapfiles/api-3/images/"]
+      {
+        @apply hidden;
+      }
+    }
+  }
+}

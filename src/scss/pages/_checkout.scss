@@ -1,0 +1,194 @@
+.checkout {
+  @apply py-5;
+
+  &-items {
+    @apply bg-white rounded-lg overflow-hidden mb-10 shadow-lg;
+
+    &__header {
+      @apply hidden md:flex bg-secondary text-white py-5 pl-2;
+    }
+
+    &__item {
+      @apply relative flex flex-wrap justify-end items-center py-spacer border-b border-grayLight last:border-b-0 pl-2;
+    }
+
+    .col {
+      @apply py-col px-spacer w-auto;
+
+      &.product {
+        @apply w-full md:flex-1;
+      }
+
+      &.quantity {
+        @apply w-40 text-center;
+        .form--input {
+          @apply m-0;
+        }
+      }
+      &.controls {
+        @apply md:w-10 px-0;
+
+        .delete {
+          @apply absolute top-4 right-4 md:static text-grayDark hover:text-red;
+
+          .icon {
+            @apply block w-5 h-5;
+          }
+        }
+      }
+
+      &.price,
+      &.summary {
+        @apply text-center w-28;
+      }
+
+      &.price {
+        @apply hidden md:block;
+      }
+    }
+
+    .product-link {
+      @apply inline-flex items-center text-black hover:text-primary;
+
+      img {
+        @apply block rounded-md flex-none w-14 sm:w-24 mr-2 transition-opacity;
+      }
+
+      &:hover img {
+        @apply opacity-75;
+      }
+
+      span {
+        @apply block;
+      }
+
+      .text {
+        @apply pr-12 md:pr-0 min-w-0;
+      }
+
+      .title {
+        @apply block truncate font-semi text-base sm:text-xl;
+      }
+
+      .desc {
+        @apply text-grayDark text-xs sm:text-sm overflow-hidden max-h-8 sm:leading-4;
+      }
+    }
+  }
+
+  &-summary {
+    @apply rounded-lg bg-black text-white overflow-hidden mb-10;
+
+    .item {
+      @apply flex items-center py-5 px-2 border-b border-grayDark;
+
+      &.discount {
+        @apply bg-grayDark bg-opacity-50;
+
+        .form {
+          @apply flex items-center;
+
+          .form--input {
+            @apply flex-1 sm:flex-none m-0 mr-5 w-56;
+
+            input {
+              @apply bg-transparent text-white;
+            }
+          }
+
+          .btn--outline {
+            @apply bg-transparent text-white hover:text-primary;
+          }
+        }
+
+        .label {
+          @apply text-sm text-pink;
+        }
+        .code {
+          @apply text-base;
+        }
+
+        .end {
+          @apply text-pink;
+        }
+      }
+
+      &.total {
+        @apply font-bold text-lg;
+      }
+
+      .col {
+        @apply flex-1 w-half;
+
+        &.start {
+          @apply flex-1 text-left;
+        }
+
+        &.end {
+          @apply flex-none w-auto whitespace-nowrap font-semi;
+        }
+      }
+    }
+  }
+
+  &-steps {
+    .step {
+      @apply flex flex-col h-full;
+
+      &__header {
+        @apply flex flex-wrap justify-center items-center select-none mb-3;
+
+        .num {
+          @apply flex justify-around items-center w-10 h-10 md:w-16 md:h-16 bg-secondary text-white text-xl md:text-3xl leading-none rounded-full;
+        }
+
+        .txt {
+          @apply flex-1 md:flex-none md:w-full md:text-center md:pt-5 text-base md:text-lg px-3 leading-tight;
+        }
+
+        .desc {
+          @apply font-bold;
+        }
+      }
+
+      &__panel {
+        @apply flex-1 bg-white rounded-lg overflow-hidden shadow-lg mb-5;
+
+        .panel__header,
+        .panel__body {
+          @apply p-5;
+        }
+
+        .panel__header {
+          @apply bg-secondary text-white text-lg font-semi py-3;
+        }
+
+        .panel__body {
+          .form--input:last-child {
+            @apply mb-0;
+          }
+        }
+      }
+    }
+
+    textarea {
+      @apply rounded-lg shadow-lg;
+    }
+
+    .form--check {
+      @apply mb-5;
+
+      label {
+        @apply inline-flex;
+
+        a {
+          @apply text-primary hover:text-pink;
+        }
+      }
+    }
+
+    .btn--primary {
+      @apply w-56;
+    }
+  }
+}

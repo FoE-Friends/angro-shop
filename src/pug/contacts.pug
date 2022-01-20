@@ -1,0 +1,53 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Контакты'
+block content
+  include ./components/_page-art
+  include ./components/_breadcrumbs
+  section.section.text-page: .container
+    .row
+      .col.md-4.lg-3
+        .section__header: h2=title
+
+        .text-page__contacts
+          .contact
+            .contact__header
+              +icon("address")
+              .title Адрес
+            .contact__body
+              p ул. Uzinelor 100/1<br>MD-2023, г. Кишинев<br>Республика Молдова
+          .contact
+            .contact__header
+              +icon("phone")
+              .title Телефон
+            .contact__body
+              p: a(href="tel:+37379818686") +373 79 818 686
+          .contact
+            .contact__header
+              +icon("schedule")
+              .title Режим работы
+            .contact__body
+              ul.schedule
+                li
+                  .schedule__start Пн - Пт
+                  .schedule__end 09:00 - 18:00
+                li
+                  .schedule__start Сб
+                  .schedule__end 09:00 - 17:00
+                li
+                  .schedule__start Вс
+                  .schedule__end 10:00 - 17:00
+          .contact
+            .contact__header
+              +icon("social")
+              .title Социальные сети
+            .contact__body
+              ul.social
+                li: a(href=""): +icon("facebook")
+                li: a(href=""): +icon("viber")
+                li: a(href=""): +icon("instagram")
+                li: a(href=""): +icon("whatsapp")
+      .col.md-8.lg-9
+        .text-page__map: #contact-map
+

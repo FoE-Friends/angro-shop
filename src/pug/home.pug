@@ -1,0 +1,48 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'Главная страница'
+
+block content
+  section.section.home-intro
+    .container
+      .intro_carousel.owl-carousel
+        -for(i=1;i<=5;i++)
+          .intro-item
+            img.image(src="//picsum.photos/id/"+44+i+"/1300/600", alt="slide image")
+            a(href="").overlay
+              .overlay__text ##{i} Скидки на товары для спальни - до 25%
+  section.section.home-categories
+    .container
+      .section__header: h2 Категории товаров
+      .categories_carousel.owl-carousel
+        -for(i=1;i<=10;i++)
+          .category
+            img.image(src="//picsum.photos/id/"+5+i+"/700", alt="slide image")
+            a(href="").overlay
+              span.category__title Постельное белье
+              span.category__counter
+                span 25 товаров
+                +icon("arrow-right")
+  +items-carousel('shop-items', 'Топ продаж')
+  +items-carousel('sale-items', 'Скидки')
+  section.section.home-about
+    .container
+      .row.items-center
+        .col.md-6.lg-7: img.image(src="//picsum.photos/id/75/760/480", alt="slide image")
+        .col.md-6.lg-5: .text-wraper
+          p Мы предлагаем качество и удобство в каждом продукте. Мы увлечены своим делом, поэтому заботимся о наших клиентах, выбирая современные, креативные и инновационные продукты.
+          h4.uppercase ПОКУПАТЕЛЯМ
+          p Мы предлагаем организацию высокоэффективной работы, которая связана с доставкой заказа, постоянно анализируем наши процессы и действия, чтобы каждый день становиться лучшими.
+          h4.uppercase ЦЕЛЬ
+          p Качество - это то что представляет каждый наш товар, будь то постельное белье или посуда, все тщательно подобраны для ваших предпочтений. Благодаря богатому ассортименту одежды и игрушек для младенцев и детей мы хотим привнести уют и тепло в ваш дом.
+          a.btn.btn--outline(href="") Смотреть больше
+  section.section.home-brands
+    .container
+      .section__header: h2 Бренды
+      .row.items-center
+        -for(i=1;i<=6;i++)
+          .col.xs-6.sm-4.md-2: img(src="//picsum.photos/id/"+12+i+"/200/150", alt="image")
+      .row.items-center
+        -for(i=1;i<=6;i++)
+          .col.xs-6.sm-4.md-2: img(src="//picsum.photos/id/"+2+i+"/200/150", alt="image")

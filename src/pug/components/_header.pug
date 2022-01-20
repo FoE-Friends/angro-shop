@@ -1,0 +1,51 @@
+header.header
+  .container.flex.items-center
+    a(href="#menu").header__menu: +icon("menu")
+    a(href='./').header__logo: img(src="../assets/images/logo_light.svg")
+    .header__search
+      form.search-form
+        label(for="search-input"): +icon('search')
+        input#search-input(type="text" placeholder="Поиск...")
+        button(type="reset"): +icon('close')
+      .search-results
+        .search-results__wraper
+          .container: .row
+            .col.sm-6
+              .results-title Товары
+              .results-list(data-simplebar="")
+                ul.product-list
+                  -for(i=1;i<=10;i++)
+                    li: a(href="").product
+                      span.product__img: img(src="//picsum.photos/id/35/64", alt="")
+                      span.product__title Фарфоровая кастрюля
+                      span.product__price 420 лей
+            .col.sm-6
+              .results-title Категории
+              .results-list(data-simplebar="")
+                ul.product-list
+                  -for(i=1;i<=10;i++)
+                    li: a(href="").category
+                      span.category__title Постельное белье
+                      span.category__items 55 товаров(а)
+    nav.header__nav
+      ul
+        li: button.nav-link.search
+          +icon('search')
+        li: a(href="").nav-link.faq
+          +icon("faq")
+          span.nav-link__text Как купить
+        li: a(href="").nav-link.fav
+          +icon("favorites")
+          span.nav-link__text Избранное
+        li: a(href="").nav-link.basket
+          span.basket__counter
+            +icon("basket")
+            span.counter 9
+          span.nav-link__text Корзина
+        li: a(href="").nav-link.user
+          +icon("user")
+          span.nav-link__text Юридическим лицам
+    nav.header__lang
+      ul
+        li: a.active(href="") Ру
+        li: a(href="") Ro

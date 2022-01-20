@@ -1,0 +1,33 @@
+extends ./layouts/_layout
+block variables
+  -
+    var title = 'О нас'
+block content
+  include ./components/_page-art
+  include ./components/_breadcrumbs
+  section.section.text-page: .container
+    .section__header: h2 Angro.md - База оптово-розничной торговли
+
+    img.text-page__image(src="//picsum.photos/id/5/1300/400", alt="about image")
+
+    .text-page__blocks
+      .row.justify-center
+        .col.sm-6.md-4: .text-block
+          .text-block__header
+            +icon("quality")
+            .title Качество
+          .text-block__body
+            p Angro.md - первая оптовая база, предлагающая  широкий ассортимент качественных непродовольственных товаров из Китая, Турции, Таиланда и Дубая
+        .col.sm-6.md-4: .text-block
+          .text-block__header
+            +icon("sale")
+            .title Низкие цены
+          .text-block__body
+            p Мы закупаем товары напрямую у производителей, поэтому наши цены вне конкуренции. Кроме того, регулярно проводим распродажи, во время которых вы можете совершать покупки со значительными скидками
+        .col.md-4: .text-block
+          .text-block__header
+            +icon("stock")
+            .title Большой склад
+          .text-block__body
+            p База angro.md - это большая бетонная площадка для обработки больших грузовиков, расположенная недалеко от одной из главных дорог Кишинева, с платформенными весами и железнодорожной веткой. Мы предлагаем арендованные места для хранения и продажи товаров любого типа
+
